@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/ACPair.sol": "UQ112x112"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 10
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/ACPair.sol": {
+			"keccak256": "0x7f338bae07b43c474b70d3212f7548745a14dac9722f21c25856b283e0d78bbf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c984c02055f528acb4a208dd5871c77a07ba5a662bcc077ba72c2312b06575a4",
+				"dweb:/ipfs/QmaQPVsjv9YeBEyhRwQ4jeoCNfhyCRUqoKAGJAfbLSzMkm"
+			]
+		}
+	},
+	"version": 1
+}
