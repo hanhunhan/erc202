@@ -477,11 +477,11 @@
 			]
 		},
 		"contracts/USDT.sol": {
-			"keccak256": "0x70c74af03ab4725059621b7a26f3533f7bc1778f9b72fa6aa22c0a096c7d19f4",
+			"keccak256": "0x154f0f49bf3062766cf3f9bdfe46c709d72fddd6070f9ff7ee625425448aa9f6",
 			"license": "UNLICENSED",
 			"urls": [
-				"bzz-raw://1ba1e9994f8d5a1969b56f9127258207d0c449dfb83c62aba313df6ae14b6921",
-				"dweb:/ipfs/QmUS7Jv3t8FDuuss8yWbVUGToz765ULub5WEhyx2aoNvUh"
+				"bzz-raw://4df56d73eb7b9df27dee2b8ee3df08e469bff96f844c51e8c5d1be4d59835c1d",
+				"dweb:/ipfs/QmUCCvpwzTPL1XNmw31CcjxU94c7Kzz3usxPbnA1ke1xcB"
 			]
 		}
 	},
