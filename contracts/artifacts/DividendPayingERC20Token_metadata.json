@@ -31,24 +31,6 @@
 			},
 			{
 				"inputs": [],
-				"name": "contractInfo",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "currentLpIndex",
 				"outputs": [
 					{
@@ -63,19 +45,6 @@
 			{
 				"inputs": [],
 				"name": "dividendGas",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "holderCondition",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -164,38 +133,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "magnifiedDividendCorrections",
-				"outputs": [
-					{
-						"internalType": "int256",
-						"name": "",
-						"type": "int256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "magnifiedDividendPerShare",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [],
 				"name": "op",
 				"outputs": [
@@ -274,12 +211,51 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "vgas",
+						"type": "uint256"
+					}
+				],
+				"name": "setDividendGas",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "setHolderRewardCondition",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "d",
 						"type": "address"
 					}
 				],
 				"name": "setOp",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "num",
+						"type": "uint256"
+					}
+				],
+				"name": "setRewardBlockAdd",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -313,11 +289,11 @@
 	},
 	"sources": {
 		"contracts/DividendPayingERC20Token.sol": {
-			"keccak256": "0xdd2e0225566afab73363d8c98f5657bc8a8bed2167f63d2392960594792043b5",
+			"keccak256": "0x736cf99e1fd7006f3f362030f429996596eb1e14ca5b5d1f0f20ff1751cffa44",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3c93dcefb16cfc11c77f737a5b92fdf468a76a061c93a5ff0ee8df058b2d2215",
-				"dweb:/ipfs/QmX8XhDfTJD8J4GeyiZuJy4aWVuT1RpDuhMwtqEF46z5RG"
+				"bzz-raw://a479fbcc07a3abaccea975bf81f11de8cf116317d0da9ce9e1b57df17c8047cb",
+				"dweb:/ipfs/QmNwFCnUV5nyHZhGVYEutHWdidyCyF21WxN12eL7PMuCDA"
 			]
 		}
 	},

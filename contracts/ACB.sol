@@ -10,7 +10,7 @@ interface IPancakeRouter {
 
 interface D {
     //function distributeDividends(uint256 amount) external returns (uint256);
-    function processReward(uint256 tfmount,address user)    external onlyOp returns (uint256)
+    function processReward(uint256 tfmount,address user)    external   returns (uint256);
 }
 
 contract Ownable {

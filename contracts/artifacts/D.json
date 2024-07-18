@@ -49,7 +49,7 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"distributeDividends(uint256)": "3243c791"
+			"processReward(uint256,address)": "dd2cad60"
 		}
 	},
 	"abi": [
@@ -57,11 +57,16 @@
 			"inputs": [
 				{
 					"internalType": "uint256",
-					"name": "amount",
+					"name": "tfmount",
 					"type": "uint256"
+				},
+				{
+					"internalType": "address",
+					"name": "user",
+					"type": "address"
 				}
 			],
-			"name": "distributeDividends",
+			"name": "processReward",
 			"outputs": [
 				{
 					"internalType": "uint256",
