@@ -6,6 +6,32 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "symbol_",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "name_",
+						"type": "string"
+					},
+					{
+						"internalType": "uint8",
+						"name": "decimals_",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalSupply_",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -124,6 +150,110 @@
 			},
 			{
 				"inputs": [],
+				"name": "bnbPair",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "c_d",
+				"outputs": [
+					{
+						"internalType": "contract D",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "decimals",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "d",
+						"type": "address"
+					}
+				],
+				"name": "setBnbPair",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "d",
+						"type": "address"
+					}
+				],
+				"name": "setD",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "totalSupply",
 				"outputs": [
 					{
@@ -139,7 +269,7 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "recipient",
+						"name": "to",
 						"type": "address"
 					},
 					{
@@ -163,12 +293,12 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "sender",
+						"name": "from",
 						"type": "address"
 					},
 					{
 						"internalType": "address",
-						"name": "recipient",
+						"name": "to",
 						"type": "address"
 					},
 					{
@@ -187,6 +317,19 @@
 				],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -202,7 +345,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/DividendPayingERC20Token.sol": "IERC20"
+			"contracts/ACB.sol": "SteamCoin"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
@@ -216,12 +359,20 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/DividendPayingERC20Token.sol": {
-			"keccak256": "0xdd2e0225566afab73363d8c98f5657bc8a8bed2167f63d2392960594792043b5",
+		"contracts/ACB.sol": {
+			"keccak256": "0x3ee1a7a53524ad5d7d0360779c901484ea69b20c9d15ff0218d8ca2a5a00e734",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3c93dcefb16cfc11c77f737a5b92fdf468a76a061c93a5ff0ee8df058b2d2215",
-				"dweb:/ipfs/QmX8XhDfTJD8J4GeyiZuJy4aWVuT1RpDuhMwtqEF46z5RG"
+				"bzz-raw://5e35d9288a95dd478eb6a724a5712aed0c77b50dc7da9b24edc07e0cc66a722c",
+				"dweb:/ipfs/QmfThB3neW8abaVEtKnV7nSxPf55XxkzFkvfU4TtKLSdAA"
+			]
+		},
+		"contracts/ERC20StandardToken.sol": {
+			"keccak256": "0x1da42774e87829ddd5fea202715f23d8f3837c732ec779f3e0c96aae14b4a7b6",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://872e31160b7baa45ee2bca7eadc9bee6d8712606913ebdb0f73462d4929e9cf5",
+				"dweb:/ipfs/QmQqEowp2ZVatveYgKP2pYo7efiMAwamun4aK7EMLP2b8L"
 			]
 		}
 	},

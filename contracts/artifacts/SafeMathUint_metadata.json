@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.20+commit.a1b79de6"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/DividendPayingERC20Token.sol": "SafeMathUint"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 10
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/DividendPayingERC20Token.sol": {
+			"keccak256": "0xdd2e0225566afab73363d8c98f5657bc8a8bed2167f63d2392960594792043b5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3c93dcefb16cfc11c77f737a5b92fdf468a76a061c93a5ff0ee8df058b2d2215",
+				"dweb:/ipfs/QmX8XhDfTJD8J4GeyiZuJy4aWVuT1RpDuhMwtqEF46z5RG"
+			]
+		}
+	},
+	"version": 1
+}

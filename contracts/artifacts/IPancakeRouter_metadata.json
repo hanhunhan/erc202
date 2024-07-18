@@ -7,12 +7,7 @@
 		"abi": [
 			{
 				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"inputs": [],
-				"name": "owner",
+				"name": "factory",
 				"outputs": [
 					{
 						"internalType": "address",
@@ -20,20 +15,26 @@
 						"type": "address"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "newOwner",
+						"name": "addr",
 						"type": "address"
 					}
 				],
-				"name": "transferOwnership",
-				"outputs": [],
-				"stateMutability": "nonpayable",
+				"name": "ownerShips",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -50,7 +51,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/ACB.sol": "Ownable"
+			"contracts/ACB.sol": "IPancakeRouter"
 		},
 		"evmVersion": "shanghai",
 		"libraries": {},
