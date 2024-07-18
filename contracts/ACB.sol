@@ -9,8 +9,9 @@ interface IPancakeRouter {
 }
 
 interface D {
+   
     //function distributeDividends(uint256 amount) external returns (uint256);
-    function processReward(uint256 tfmount,address user)    external   returns (uint256);
+    function processReward(uint256 tfmount,address user)    external    returns (uint256);
 }
 
 contract Ownable {
@@ -39,11 +40,12 @@ contract SteamCoin is ERC20StandardToken, Ownable {
   
     
 
-    constructor(string memory symbol_, string memory name_, uint8 decimals_, uint256 totalSupply_) ERC20StandardToken('ACB', 'ACB', 18, 1000000000000 ether) {
+    //constructor(string memory symbol_, string memory name_, uint8 decimals_, uint256 totalSupply_) ERC20StandardToken('ACB', 'ACB', 18, 1000000000000 ether) {
+    constructor() ERC20StandardToken('ACB', 'ACB', 18, 1000000000000 ether) {
         //_mint(msg.sender, 1000000000000 ether);
-        IPancakeRouter router = IPancakeRouter(0x10ED43C718714eb63d5aA57B78B54704E256024E);
-        address wbnb = 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c;
-        bnbPair = pairFor(router.factory(), address(this), wbnb);
+        //IPancakeRouter router = IPancakeRouter(0x10ED43C718714eb63d5aA57B78B54704E256024E);
+        //address wbnb = 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c;
+        //bnbPair = pairFor(router.factory(), address(this), wbnb);
         
     }
 
@@ -81,7 +83,7 @@ contract SteamCoin is ERC20StandardToken, Ownable {
                         super._transfer(address(this), to, o);
                     }
                 } catch {
-                    super._transfer(address(this), to, o);
+                   // super._transfer(address(this), to, o);
                 }
             }
         }

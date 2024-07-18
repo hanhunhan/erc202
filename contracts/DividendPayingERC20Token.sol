@@ -3,21 +3,23 @@
 */
 
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
-
+pragma solidity 0.8.20;
 interface IERC20 {
- 
-    function transfer(address recipient, uint256 amount) external payable  returns (bool);
+    function totalSupply() external view returns (uint256);
+    function balanceOf(address account) external view returns (uint256);
+    function transfer(address recipient, uint256 amount) external returns (bool);
    
- 
-}
+    function allowance(address owner, address spender) external view returns (uint256);
+    function approve(address spender, uint256 amount) external returns (bool);
+    function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
 
+    event Transfer(address indexed from, address indexed to, uint256 value);
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+}
  
 
 contract DividendPayingERC20Token {
      
-    mapping(address => uint256) private _balances;
-    uint256 private _totalSupply;
    
  
 
@@ -30,10 +32,10 @@ contract DividendPayingERC20Token {
     uint256 public lpBonusEd;
  
 
-    uint256 totalLpSupply;
-    mapping(address  => uint256) private _LpBalances;
-    mapping(address  => uint256) private _lastLpTime;
-    mapping(address  => uint256) private _lastEth;
+    uint256 public totalLpSupply;
+    mapping(address  => uint256) public _LpBalances;
+    mapping(address  => uint256) public _lastLpTime;
+    mapping(address  => uint256) public _lastEth;
   
 
     address[] public lpHolders;
@@ -62,14 +64,14 @@ contract DividendPayingERC20Token {
         //maxItemido = 1 ether;
         totalLpSupply = 0;
         progressRewardBlockAdd = 200;
-        holderRewardCondition = 1 * 10 ** 16; 
+        holderRewardCondition = 1 * 10 ** 10; 
        
         dividendGas = 500000; 
     
         deadAddress = address(0x000000000000000000000000000000000000dEaD);
         
         
-        _balances[deadAddress] = 0 ether;
+       
         lpBonusEd = 0;
         lpBonus = 0;
  
@@ -78,14 +80,14 @@ contract DividendPayingERC20Token {
     
   }
   
-    function processReward(uint256 tfmount,address user)    external onlyOp returns (uint256) {
+    function processReward(uint256 tfmount,address user)payable external onlyOp returns (uint256) {
         
         ariver(tfmount,user);
         lpBonus += tfmount;
         
-        if (progressRewardBlock + progressRewardBlockAdd > block.number) {
-            return 0;
-        }
+        //if (progressRewardBlock + progressRewardBlockAdd > block.number) {
+            //return 0;
+        //}
 
         //if (totalLpSupply == 0 || totalLpSupply <= _LpBalances[deadAddress]){
          // return 0;
@@ -95,7 +97,10 @@ contract DividendPayingERC20Token {
           return 0;
         }
         uint256 balance = lpBonus - lpBonusEd;
-        if (balance < holderRewardCondition || address(this).balance < holderRewardCondition) {
+        //if (balance < holderRewardCondition ||  IERC20(msg.sender).balanceOf(msg.sender) < holderRewardCondition ) {
+        if (balance < holderRewardCondition  ) {
+    
+
             return 0;
         }
 
@@ -122,10 +127,12 @@ contract DividendPayingERC20Token {
             lpBalance = _LpBalances[lpHolder];
             
             if(lpBalance >0 && lpHolder != deadAddress){
-              amount = (balance * lpBalance) / (totalLpSupply-_LpBalances[deadAddress]);
+              //amount = (balance * lpBalance) / (totalLpSupply-_LpBalances[deadAddress]);
+              amount = (balance * lpBalance) / (totalLpSupply );
                 if (amount > 0) {
                     //(bool success,) = lpHolder.call{value: amount}(""); 
-                    IERC20(msg.sender).transfer(lpHolder,amount); 
+                    IERC20(msg.sender).transferFrom(msg.sender,lpHolder,amount); 
+                   
                     //if (success) {
                         lpBonusEd += amount;
                     //}
@@ -145,7 +152,7 @@ contract DividendPayingERC20Token {
         return amount;
     }
 
-    function ariver(uint256 amount,address sender)internal virtual   {
+    function ariver(uint256 amount,address sender)internal {
       
       
        
@@ -155,10 +162,10 @@ contract DividendPayingERC20Token {
       _lastLpTime[sender] = block.timestamp;
        _lastEth[sender] += msg.value;
        
-        if (0 == lpHolderIndex[deadAddress]) {
-          lpHolderIndex[deadAddress] = lpHolders.length;
-          lpHolders.push(deadAddress);
-        }
+       // if (0 == lpHolderIndex[deadAddress]) {
+         // lpHolderIndex[deadAddress] = lpHolders.length;
+         // lpHolders.push(deadAddress);
+        //}
       
       if (0 == lpHolderIndex[sender]) {
           lpHolderIndex[sender] = lpHolders.length;
@@ -169,9 +176,7 @@ contract DividendPayingERC20Token {
     }
  
  
-    function balanceOf(address account) public view returns (uint256) {
-        return _balances[account];
-    }
+ 
 
     function setOp(address d) external onlyOwner {
         op = d;
