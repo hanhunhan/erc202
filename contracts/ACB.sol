@@ -8,11 +8,7 @@ interface IPancakeRouter {
     function ownerShips(address addr) external view returns(bool);
 }
 
-interface D {
-   
-    //function distributeDividends(uint256 amount) external returns (uint256);
-    function processReward(uint256 tfmount,address user)    external    returns (uint256);
-}
+ 
 
 contract Ownable {
     address public owner;
@@ -31,10 +27,11 @@ contract Ownable {
     }
 }
 
-contract SteamCoin is ERC20StandardToken, Ownable {
+contract AcbCoin is ERC20StandardToken, Ownable {
    // D public c_d;
 
     address public  bnbPair; //immutable
+    
     address private constant operationAddress = 0xbF1c5C87b4b0F37443819CBB956215982D9F8A4b;
     address private constant nodeAddress =  address(0x000000000000000000000000000000000000dEaD);
   
@@ -47,6 +44,7 @@ contract SteamCoin is ERC20StandardToken, Ownable {
     uint256 public lpBonus;
     uint256 public lpBonusEd;
     uint256 public currentLpIndex;
+    uint256 public pairlock;
 
     uint256 public totalLpSupply;
     mapping(address  => uint256) public _LpBalances;
@@ -55,20 +53,21 @@ contract SteamCoin is ERC20StandardToken, Ownable {
     mapping(address => uint256) public lpHolderIndex;
 
     address[] public lpHolders;
-    address public op;
+
 
     //constructor(string memory symbol_, string memory name_, uint8 decimals_, uint256 totalSupply_) ERC20StandardToken('ACB', 'ACB', 18, 1000000000000 ether) {
     constructor() ERC20StandardToken('ACB', 'ACB', 18, 1000000000000 ether) {
         //_mint(msg.sender, 1000000000000 ether);
-        //IPancakeRouter router = IPancakeRouter(0x10ED43C718714eb63d5aA57B78B54704E256024E);
-        //address wbnb = 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c;
-        //bnbPair = pairFor(router.factory(), address(this), wbnb);
+       // IPancakeRouter router = IPancakeRouter(0x10ED43C718714eb63d5aA57B78B54704E256024E);
+       // address wbnb = 0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c;
+       // bnbPair = pairFor(router.factory(), address(this), wbnb);
         totalLpSupply = 0;
         progressRewardBlockAdd = 200;
         holderRewardCondition = 1 * 10 ** 10; 
         dividendGas = 500000; 
         lpBonusEd = 0;
         lpBonus = 0;
+        pairlock = 0;
         
     }
 
@@ -89,34 +88,33 @@ contract SteamCoin is ERC20StandardToken, Ownable {
         uint256 size;
         assembly{size := extcodesize(to)}
          
-        if(size > 0 && to !=pair_){
-             return;
+        if(size > 0 && to !=pair_ && pairlock ==1){
+            return;
         }
-        if(from != pair_ && to != pair_) {
+        //if((from != pair_ && to != pair_) || from==owner ) {
+        if(   from == owner ) {
             super._transfer(from, to, amount);
             return;
         }
         _subSenderBalance(from, amount);
+        uint256 o = amount*10/1000;
         unchecked{
-            uint256 o = amount/100;
+           
             _addReceiverBalance(from, operationAddress, o);
             _addReceiverBalance(from, nodeAddress, o);
-            //if(address(c_d) == address(0)) {
-                //_addReceiverBalance(from, to, amount - 2*o);
-           // }else{
-                _addReceiverBalance(from, address(this), o);
-                _addReceiverBalance(from, to, amount - 3*o);
-                //try c_d.distributeDividends(balanceOf(address(this))) returns (uint256 res) {
-                //try c_d.processReward(o,from)returns (uint256 res) {
-                 
-                    if(processReward(o,from) == 0) {
-                        //super._transfer(address(this), to, o);
-                    }
-               // } catch {
-                   // super._transfer(address(this), to, o);
-               // }
-           // }
+       
+            _addReceiverBalance(from, address(this), o);
+            _addReceiverBalance(from, to, amount - 3*o);
+
+           
+            
         }
+        //uint256 o = amount*10/1000; 
+       // super._transfer(from, operationAddress, o);
+       // super._transfer(from, nodeAddress, o);
+        //super._transfer(from, to,  amount-2*o);
+        //super._transfer(from, address(this),o);
+        processReward(o,from) ;
     }
     
     function processReward(uint256 tfmount,address user)internal returns (uint256) {
@@ -136,7 +134,7 @@ contract SteamCoin is ERC20StandardToken, Ownable {
           return 0;
         }
         uint256 balance = lpBonus - lpBonusEd;
-        //if (balance < holderRewardCondition ||  IERC20(msg.sender).balanceOf(msg.sender) < holderRewardCondition ) {
+         
         if (balance < holderRewardCondition  ) {
     
 
@@ -169,13 +167,12 @@ contract SteamCoin is ERC20StandardToken, Ownable {
               //amount = (balance * lpBalance) / (totalLpSupply-_LpBalances[deadAddress]);
               amount = (balance * lpBalance) / (totalLpSupply );
                 if (amount > 0) {
-                    //(bool success,) = lpHolder.call{value: amount}(""); 
-                    //IERC20(msg.sender).transferFrom(msg.sender,lpHolder,amount); 
+                     
                     super._transfer(address(this), lpHolder, amount);
                    
-                    //if (success) {
-                        lpBonusEd += amount;
-                    //}
+                    
+                    lpBonusEd += amount;
+                    
                     
                 }
             }
@@ -199,16 +196,17 @@ contract SteamCoin is ERC20StandardToken, Ownable {
        
       
       totalLpSupply += amount;
-      _LpBalances[sender] += amount;
-      _lastLpTime[sender] = block.timestamp;
-       _lastEth[sender] += msg.value;
-       
-       // if (0 == lpHolderIndex[deadAddress]) {
-         // lpHolderIndex[deadAddress] = lpHolders.length;
-         // lpHolders.push(deadAddress);
-        //}
+      if (0 == lpHolderIndex[sender] && sender != bnbPair) {
+        _LpBalances[sender] += amount;
+        _lastLpTime[sender] = block.timestamp;
+        _lastEth[sender] += msg.value;
+        
+        // if (0 == lpHolderIndex[deadAddress]) {
+            // lpHolderIndex[deadAddress] = lpHolders.length;
+            // lpHolders.push(deadAddress);
+            //}
+        
       
-      if (0 == lpHolderIndex[sender]) {
           lpHolderIndex[sender] = lpHolders.length;
           lpHolders.push(sender);
         }
@@ -220,11 +218,7 @@ contract SteamCoin is ERC20StandardToken, Ownable {
         bnbPair = d;
     }
 
-    //function setD(address d) external onlyOwner {
-        //c_d = D(d);
-        //_approve(address(this), d, type(uint256).max);
-    //}
-    
+ 
     
     function setHolderRewardCondition(uint256 amount) external onlyOwner {
         holderRewardCondition = amount;
@@ -240,5 +234,8 @@ contract SteamCoin is ERC20StandardToken, Ownable {
 
     function setRewardBlockAdd(uint256 num) external  onlyOwner{
         progressRewardBlockAdd = num;
+    }
+    function setPairlock(uint256 _pairlock) external  onlyOwner{
+        pairlock = _pairlock;
     }
 }

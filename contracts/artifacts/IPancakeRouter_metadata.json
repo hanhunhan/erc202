@@ -66,11 +66,11 @@
 	},
 	"sources": {
 		"contracts/ACB.sol": {
-			"keccak256": "0x1d5b51726cb4ec2396665711b372a6b2b64f98e017f4b837ddac33108b9d7c51",
+			"keccak256": "0x7df7a0e9f5842049dee9cbdac54762cf171224d16088e295372708f851db572d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://25c699f5fe1acf43b71d14f37b60c0aafc22383637ab5edb9874a6b81e9a2b94",
-				"dweb:/ipfs/Qmde4LXjb4cypbX8FseGTfjELaoFFNzbweEjg94m1xmGV4"
+				"bzz-raw://8ebba058aeb9a6cb12b9e5702f34caca1d9a130e7e4e1f772a15ae29b0b1973d",
+				"dweb:/ipfs/QmXVvwVZcdUpgSa6WQTtw4VUCt42hD3WMGv9tqoBjRUeXg"
 			]
 		},
 		"contracts/ERC20StandardToken.sol": {
