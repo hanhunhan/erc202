@@ -217,11 +217,11 @@
 	},
 	"sources": {
 		"contracts/DividendPayingERC20Token.sol": {
-			"keccak256": "0x5e6765933d81aa602b98e69b12dd0b38c35177daee87fed695d0cf2c6d588df7",
+			"keccak256": "0x83c1e24d8861e1396508ab9a92097c56562f3a2054831ff13322b74b9cb2cd6c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2e8f3f162ca45d9dd26299ed58b127847b0ad233ef12a81572ff4a96d833682a",
-				"dweb:/ipfs/QmPppneaGdEskJhD37Mi3R2rQkxK59DCe1qmDg4KaDWmd3"
+				"bzz-raw://7e6af67902b186a2c547f1ebf1648f945ca11c94b0a793dd3dce0f4288c24324",
+				"dweb:/ipfs/QmQQkoV1YzkSSV4QjN75bjTuFmo6AKZi9fK45jFKriuwdH"
 			]
 		}
 	},

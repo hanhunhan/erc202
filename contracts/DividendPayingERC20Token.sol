@@ -30,22 +30,22 @@ contract DividendPayingERC20Token {
     uint256 public dividendGas;
     uint256 public lpBonus;
     uint256 public lpBonusEd;
- 
+    uint256 public currentLpIndex;
 
     uint256 public totalLpSupply;
     mapping(address  => uint256) public _LpBalances;
     mapping(address  => uint256) public _lastLpTime;
     mapping(address  => uint256) public _lastEth;
-  
+    mapping(address => uint256) public lpHolderIndex;
 
     address[] public lpHolders;
-    mapping(address => uint256) public lpHolderIndex;
-    uint256 public currentLpIndex;
+    address public op;
+    address public owner;
+    
     
     
     address private  deadAddress;
-    address public op;
-    address public owner;
+
     modifier onlyOp() {
         require(op == msg.sender, "Ownable: caller is not the op");
         _;
