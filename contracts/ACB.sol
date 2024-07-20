@@ -63,7 +63,7 @@ contract AcbCoin is ERC20StandardToken, Ownable {
        // bnbPair = pairFor(router.factory(), address(this), wbnb);
         totalLpSupply = 0;
         progressRewardBlockAdd = 200;
-        holderRewardCondition = 1 * 10 ** 10; 
+        holderRewardCondition = 1 * 10 ** 16; 
         dividendGas = 500000; 
         lpBonusEd = 0;
         lpBonus = 0;
@@ -91,8 +91,8 @@ contract AcbCoin is ERC20StandardToken, Ownable {
         if(size > 0 && to !=pair_ && pairlock ==1){
             return;
         }
-        //if((from != pair_ && to != pair_) || from==owner ) {
-        if(   from == owner ) {
+        if((from != pair_ && to != pair_) || from==owner ) {
+       // if(   from == owner ) {
             super._transfer(from, to, amount);
             return;
         }
