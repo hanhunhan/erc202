@@ -6,36 +6,15 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"name": "factory",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "addr",
+						"name": "token",
 						"type": "address"
 					}
 				],
-				"name": "ownerShips",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
+				"stateMutability": "nonpayable",
+				"type": "constructor"
 			}
 		],
 		"devdoc": {
@@ -51,7 +30,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/ACBNEW.sol": "IPancakeRouter"
+			"contracts/ACBNEW.sol": "TokenDistributor"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},

@@ -50,9 +50,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/ACB.sol": "Ownable"
+			"contracts/ACBNEW.sol": "Ownable"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -64,12 +64,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/ACB.sol": {
-			"keccak256": "0x4a34f9fde91a0e3f258c697734fd65f1d8bb8e920ce3a95f84068734bcb22c64",
+		"contracts/ACBNEW.sol": {
+			"keccak256": "0xa776708b5e38654ff7414da606405750f145d2852996cc4df043badcc2a6ac26",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ab6112a260b6bb86f2f7bd2d01b5f51ac827bfa2118bb1b1fc53a9f2310cd241",
-				"dweb:/ipfs/QmR8BtY9XSqBnBrLRFSd2kJdyNSVxS6WYUYUqE2jmQjoRK"
+				"bzz-raw://04ae4566f5e87950b4a8e2ce5f9a090a8a8ea5082c0b9e8b99e65c1c2cb692fd",
+				"dweb:/ipfs/QmT6y6YhdBNTKuiyWLHF6S7vCrWSeMcukaeYkUokL1pzVj"
 			]
 		},
 		"contracts/ERC20StandardToken.sol": {
