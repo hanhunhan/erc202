@@ -11,6 +11,25 @@
 				"type": "constructor"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
 				"inputs": [],
 				"name": "owner",
 				"outputs": [
@@ -21,6 +40,13 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -39,7 +65,20 @@
 		],
 		"devdoc": {
 			"kind": "dev",
-			"methods": {},
+			"methods": {
+				"constructor": {
+					"details": "Initializes the contract setting the deployer as the initial owner."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
 			"version": 1
 		},
 		"userdoc": {
@@ -50,7 +89,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/ACBNEW.sol": "Ownable"
+			"contracts/ERC20.sol": "Ownable"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -64,20 +103,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/ACBNEW.sol": {
-			"keccak256": "0xa776708b5e38654ff7414da606405750f145d2852996cc4df043badcc2a6ac26",
+		"contracts/ERC20.sol": {
+			"keccak256": "0x941ee2afefe67e33efaed75444c8f0d1c1f1fad689e38270af991aa5e665a6f4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://04ae4566f5e87950b4a8e2ce5f9a090a8a8ea5082c0b9e8b99e65c1c2cb692fd",
-				"dweb:/ipfs/QmT6y6YhdBNTKuiyWLHF6S7vCrWSeMcukaeYkUokL1pzVj"
-			]
-		},
-		"contracts/ERC20StandardToken.sol": {
-			"keccak256": "0x1da42774e87829ddd5fea202715f23d8f3837c732ec779f3e0c96aae14b4a7b6",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://872e31160b7baa45ee2bca7eadc9bee6d8712606913ebdb0f73462d4929e9cf5",
-				"dweb:/ipfs/QmQqEowp2ZVatveYgKP2pYo7efiMAwamun4aK7EMLP2b8L"
+				"bzz-raw://ff6e9ac80d727808597277cd8217c5c20ace0258cac2c2a35ccede69902dbb8c",
+				"dweb:/ipfs/Qmcp8SSijc26guDzVeVQaTTXfFhU2KV49FF7oufb6puWN2"
 			]
 		}
 	},

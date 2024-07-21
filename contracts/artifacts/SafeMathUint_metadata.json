@@ -6,8 +6,10 @@
 	"output": {
 		"abi": [],
 		"devdoc": {
+			"details": "Math operations with safety checks that revert on error",
 			"kind": "dev",
 			"methods": {},
+			"title": "SafeMathUint",
 			"version": 1
 		},
 		"userdoc": {
@@ -18,9 +20,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/DividendPayingERC20Token.sol": "SafeMathUint"
+			"contracts/ERC20.sol": "SafeMathUint"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -32,12 +34,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/DividendPayingERC20Token.sol": {
-			"keccak256": "0xb485bd6f6683bf14fbc15124bce10dee0e61098dff5d829c3cd552d9e0f5efa8",
+		"contracts/ERC20.sol": {
+			"keccak256": "0x941ee2afefe67e33efaed75444c8f0d1c1f1fad689e38270af991aa5e665a6f4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1c8669fced2290cd7f9313626839550858d3e2f9ca82f2fb2f8b2f991a654e04",
-				"dweb:/ipfs/QmWpaP9JAbbJgdmD4dsQ7UPih2s3fzud95vb1Y7jLnNo29"
+				"bzz-raw://ff6e9ac80d727808597277cd8217c5c20ace0258cac2c2a35ccede69902dbb8c",
+				"dweb:/ipfs/Qmcp8SSijc26guDzVeVQaTTXfFhU2KV49FF7oufb6puWN2"
 			]
 		}
 	},

@@ -6,10 +6,8 @@
 	"output": {
 		"abi": [],
 		"devdoc": {
-			"details": "Math operations for int256 with overflow safety checks.",
 			"kind": "dev",
 			"methods": {},
-			"title": "SafeMathInt",
 			"version": 1
 		},
 		"userdoc": {
@@ -20,7 +18,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/ERC20.sol": "SafeMathInt"
+			"contracts/ERC20.sol": "SafeMath"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
