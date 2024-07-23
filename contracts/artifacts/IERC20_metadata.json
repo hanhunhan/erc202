@@ -83,23 +83,17 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "spender",
+						"name": "_spender",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "_value",
 						"type": "uint256"
 					}
 				],
 				"name": "approve",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -107,7 +101,7 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "account",
+						"name": "who",
 						"type": "address"
 					}
 				],
@@ -117,6 +111,45 @@
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "decimals",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "name",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "symbol",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
 					}
 				],
 				"stateMutability": "view",
@@ -163,63 +196,29 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "sender",
+						"name": "_from",
 						"type": "address"
 					},
 					{
 						"internalType": "address",
-						"name": "recipient",
+						"name": "_to",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "amount",
+						"name": "_value",
 						"type": "uint256"
 					}
 				],
 				"name": "transferFrom",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
 		"devdoc": {
-			"details": "Interface of the ERC20 standard as defined in the EIP.",
-			"events": {
-				"Approval(address,address,uint256)": {
-					"details": "Emitted when the allowance of a `spender` for an `owner` is set by a call to {approve}. `value` is the new allowance."
-				},
-				"Transfer(address,address,uint256)": {
-					"details": "Emitted when `value` tokens are moved from one account (`from`) to another (`to`). Note that `value` may be zero."
-				}
-			},
 			"kind": "dev",
-			"methods": {
-				"allowance(address,address)": {
-					"details": "Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through {transferFrom}. This is zero by default. This value changes when {approve} or {transferFrom} are called."
-				},
-				"approve(address,uint256)": {
-					"details": "Sets `amount` as the allowance of `spender` over the caller's tokens. Returns a boolean value indicating whether the operation succeeded. IMPORTANT: Beware that changing an allowance with this method brings the risk that someone may use both the old and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards: https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729 Emits an {Approval} event."
-				},
-				"balanceOf(address)": {
-					"details": "Returns the amount of tokens owned by `account`."
-				},
-				"totalSupply()": {
-					"details": "Returns the amount of tokens in existence."
-				},
-				"transfer(address,uint256)": {
-					"details": "Moves `amount` tokens from the caller's account to `recipient`. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event."
-				},
-				"transferFrom(address,address,uint256)": {
-					"details": "Moves `amount` tokens from `sender` to `recipient` using the allowance mechanism. `amount` is then deducted from the caller's allowance. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event."
-				}
-			},
+			"methods": {},
 			"version": 1
 		},
 		"userdoc": {
@@ -230,7 +229,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/ERC20.sol": "IERC20"
+			"contracts/ACBP.sol": "IERC20"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -244,12 +243,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/ERC20.sol": {
-			"keccak256": "0x941ee2afefe67e33efaed75444c8f0d1c1f1fad689e38270af991aa5e665a6f4",
+		"contracts/ACBP.sol": {
+			"keccak256": "0x2fda6d4d915a3ce0b518a4cfc68a3919e25a8e1c9e94e4a0d21b33ce869ca8ef",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ff6e9ac80d727808597277cd8217c5c20ace0258cac2c2a35ccede69902dbb8c",
-				"dweb:/ipfs/Qmcp8SSijc26guDzVeVQaTTXfFhU2KV49FF7oufb6puWN2"
+				"bzz-raw://91e0bdd13c014b733dad305683e0292e414da27f5f49cb22d1d1d6243900a78a",
+				"dweb:/ipfs/Qme7NjCmQ2bxkcLikwmQZp8d9xvHTCiZ2vzgXDr12kcpVs"
 			]
 		}
 	},

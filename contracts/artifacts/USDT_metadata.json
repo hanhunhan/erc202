@@ -424,14 +424,14 @@
 		"compilationTarget": {
 			"contracts/USDT.sol": "USDT"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
 			"enabled": true,
-			"runs": 1
+			"runs": 10
 		},
 		"remappings": []
 	},

@@ -300,7 +300,7 @@
 		"compilationTarget": {
 			"contracts/ACPair.sol": "IBTBPair"
 		},
-		"evmVersion": "shanghai",
+		"evmVersion": "istanbul",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"

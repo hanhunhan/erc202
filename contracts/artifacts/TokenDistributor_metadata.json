@@ -30,7 +30,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/ACBNEW.sol": "TokenDistributor"
+			"contracts/ACBP.sol": "TokenDistributor"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -44,20 +44,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/ACBNEW.sol": {
-			"keccak256": "0xa776708b5e38654ff7414da606405750f145d2852996cc4df043badcc2a6ac26",
+		"contracts/ACBP.sol": {
+			"keccak256": "0x2fda6d4d915a3ce0b518a4cfc68a3919e25a8e1c9e94e4a0d21b33ce869ca8ef",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://04ae4566f5e87950b4a8e2ce5f9a090a8a8ea5082c0b9e8b99e65c1c2cb692fd",
-				"dweb:/ipfs/QmT6y6YhdBNTKuiyWLHF6S7vCrWSeMcukaeYkUokL1pzVj"
-			]
-		},
-		"contracts/ERC20StandardToken.sol": {
-			"keccak256": "0x1da42774e87829ddd5fea202715f23d8f3837c732ec779f3e0c96aae14b4a7b6",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://872e31160b7baa45ee2bca7eadc9bee6d8712606913ebdb0f73462d4929e9cf5",
-				"dweb:/ipfs/QmQqEowp2ZVatveYgKP2pYo7efiMAwamun4aK7EMLP2b8L"
+				"bzz-raw://91e0bdd13c014b733dad305683e0292e414da27f5f49cb22d1d1d6243900a78a",
+				"dweb:/ipfs/Qme7NjCmQ2bxkcLikwmQZp8d9xvHTCiZ2vzgXDr12kcpVs"
 			]
 		}
 	},

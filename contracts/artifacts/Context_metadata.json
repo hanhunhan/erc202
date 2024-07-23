@@ -6,6 +6,7 @@
 	"output": {
 		"abi": [],
 		"devdoc": {
+			"details": "Provides information about the current execution context, including the sender of the transaction and its data. While these are generally available via msg.sender and msg.data, they should not be accessed in such a direct manner, since when dealing with meta-transactions the account sending and paying for execution may not be the actual sender (as far as an application is concerned). This contract is only required for intermediate, library-like contracts.",
 			"kind": "dev",
 			"methods": {},
 			"version": 1
@@ -18,7 +19,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/ERC20.sol": "Context"
+			"contracts/ACPair.sol": "Context"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -32,12 +33,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/ERC20.sol": {
-			"keccak256": "0x941ee2afefe67e33efaed75444c8f0d1c1f1fad689e38270af991aa5e665a6f4",
+		"contracts/ACPair.sol": {
+			"keccak256": "0x7f338bae07b43c474b70d3212f7548745a14dac9722f21c25856b283e0d78bbf",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ff6e9ac80d727808597277cd8217c5c20ace0258cac2c2a35ccede69902dbb8c",
-				"dweb:/ipfs/Qmcp8SSijc26guDzVeVQaTTXfFhU2KV49FF7oufb6puWN2"
+				"bzz-raw://c984c02055f528acb4a208dd5871c77a07ba5a662bcc077ba72c2312b06575a4",
+				"dweb:/ipfs/QmaQPVsjv9YeBEyhRwQ4jeoCNfhyCRUqoKAGJAfbLSzMkm"
 			]
 		}
 	},
