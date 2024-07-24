@@ -20,7 +20,7 @@
 		"compilationTarget": {
 			"contracts/ACPair.sol": "Math"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"

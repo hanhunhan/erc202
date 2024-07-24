@@ -336,7 +336,7 @@
 		"compilationTarget": {
 			"contracts/ACPair.sol": "BTBERC20"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"

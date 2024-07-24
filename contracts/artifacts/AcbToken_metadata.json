@@ -1278,7 +1278,7 @@
 		"compilationTarget": {
 			"contracts/ACBP.sol": "AcbToken"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"

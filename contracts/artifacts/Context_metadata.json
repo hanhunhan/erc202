@@ -21,7 +21,7 @@
 		"compilationTarget": {
 			"contracts/ACPair.sol": "Context"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"

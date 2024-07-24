@@ -89,7 +89,7 @@
 		"compilationTarget": {
 			"contracts/ACBP.sol": "ISwapPair"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"

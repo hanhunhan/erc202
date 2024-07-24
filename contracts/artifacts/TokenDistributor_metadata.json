@@ -32,7 +32,7 @@
 		"compilationTarget": {
 			"contracts/ACBP.sol": "TokenDistributor"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"

@@ -69,7 +69,7 @@
 		"compilationTarget": {
 			"contracts/ACBP.sol": "ISwapFactory"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"

@@ -34,7 +34,7 @@
 		"compilationTarget": {
 			"contracts/ACBP.sol": "IWBNB"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"

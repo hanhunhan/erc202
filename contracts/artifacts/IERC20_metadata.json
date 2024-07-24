@@ -231,7 +231,7 @@
 		"compilationTarget": {
 			"contracts/ACBP.sol": "IERC20"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"

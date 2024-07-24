@@ -424,7 +424,7 @@
 		"compilationTarget": {
 			"contracts/USDT.sol": "USDT"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"

@@ -231,7 +231,7 @@
 		"compilationTarget": {
 			"contracts/ACBP.sol": "ISwapRouter"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "shanghai",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
